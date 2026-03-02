@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/appointment-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/appointment-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/calculation-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/calculation-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/clinic-network-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/clinic-network-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/employee-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/employee-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/log-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/log-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/medical-record-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/medical-record-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/medication-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/medication-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/notification-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/notification-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pet-profile-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pet-profile-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qr-code-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qr-code-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-auth-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vaccination-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vaccination-service/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

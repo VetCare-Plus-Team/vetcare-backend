@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/user-auth-service/pom.xml" />
+        <option value="$PROJECT_DIR$/vaccination-service/pom.xml" />
+        <option value="$PROJECT_DIR$/qr-code-service/pom.xml" />
+        <option value="$PROJECT_DIR$/pet-profile-service/pom.xml" />
+        <option value="$PROJECT_DIR$/notification-service/pom.xml" />
+        <option value="$PROJECT_DIR$/medication-service/pom.xml" />
+        <option value="$PROJECT_DIR$/medical-record-service/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/clinic-network-service/pom.xml" />
+        <option value="$PROJECT_DIR$/calculation-service/pom.xml" />
+        <option value="$PROJECT_DIR$/appointment-service/pom.xml" />
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/log-service/pom.xml" />
+        <option value="$PROJECT_DIR$/employee-service/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="17" project-jdk-type="JavaSDK" />
+</project>

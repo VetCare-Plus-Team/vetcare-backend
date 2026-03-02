@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="appointment-service" />
+        <module name="qr-code-service" />
+        <module name="eureka-server" />
+        <module name="notification-service" />
+        <module name="calculation-service" />
+        <module name="employee-service" />
+        <module name="config-server" />
+        <module name="pet-profile-service" />
+        <module name="vaccination-service" />
+        <module name="medical-record-service" />
+        <module name="api-gateway" />
+        <module name="log-service" />
+        <module name="user-auth-service" />
+        <module name="medication-service" />
+        <module name="clinic-network-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-gateway" target="17" />
+      <module name="appointment-service" target="17" />
+      <module name="calculation-service" target="17" />
+      <module name="clinic-network-service" target="17" />
+      <module name="config-server" target="17" />
+      <module name="employee-service" target="17" />
+      <module name="eureka-server" target="17" />
+      <module name="log-service" target="17" />
+      <module name="medical-record-service" target="17" />
+      <module name="medication-service" target="17" />
+      <module name="notification-service" target="17" />
+      <module name="pet-profile-service" target="17" />
+      <module name="qr-code-service" target="17" />
+      <module name="user-auth-service" target="17" />
+      <module name="vaccination-service" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
+      <module name="appointment-service" options="-parameters" />
+      <module name="calculation-service" options="-parameters" />
+      <module name="clinic-network-service" options="-parameters" />
+      <module name="config-server" options="-parameters" />
+      <module name="employee-service" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="log-service" options="-parameters" />
+      <module name="medical-record-service" options="-parameters" />
+      <module name="medication-service" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
+      <module name="pet-profile-service" options="-parameters" />
+      <module name="qr-code-service" options="-parameters" />
+      <module name="user-auth-service" options="-parameters" />
+      <module name="vaccination-service" options="-parameters" />
+    </option>
+  </component>
+</project>
