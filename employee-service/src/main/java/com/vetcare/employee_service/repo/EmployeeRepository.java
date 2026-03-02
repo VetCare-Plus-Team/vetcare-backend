@@ -4,6 +4,7 @@ import com.vetcare.employee_service.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -12,4 +13,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     
     // get employee details by user id
     Optional<Employee> findByUserId(Long userId);
+    
+    // User IDs godak deela e okkogema employee details ganna
+    List<Employee> findByUserIdIn(List<Long> userIds);
 }

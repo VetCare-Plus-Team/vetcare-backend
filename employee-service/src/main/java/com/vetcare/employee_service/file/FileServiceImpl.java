@@ -6,6 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
@@ -30,6 +31,14 @@ public class FileServiceImpl implements FileService{
     public InputStream getResourcesFile(String path, String fileName) throws FileNotFoundException {
         String filePath = path + File.separator + fileName;
         return new FileInputStream(filePath);
+    }
+    
+    @Override
+    public void deleteFile(String path, String fileName) throws IOException {
+        if (fileName != null && !fileName.isEmpty()) {
+            Path filePath = Paths.get(path + File.separator + fileName);
+            Files.deleteIfExists(filePath);
+        }
     }
     
     

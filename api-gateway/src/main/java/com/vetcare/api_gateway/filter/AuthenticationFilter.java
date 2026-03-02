@@ -17,6 +17,8 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
     @Autowired
     private JwtUtil jwtUtil;
     
+    
+    
     public AuthenticationFilter() {
         super(Config.class);
     }
@@ -25,8 +27,9 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
     public GatewayFilter apply(Config config) {
         return ((exchange, chain) -> {
             
-            // Auth endpoints walata token nathuwa yanna denawa (Register / Login)
-            if (exchange.getRequest().getURI().getPath().contains("/api/auth")) {
+            String path = exchange.getRequest().getURI().getPath();
+            // Auth endpoints saha Image endpoints walata token nathuwa yanna denawa
+            if (path.contains("/api/auth") || path.contains("/api/employees/image/")) {
                 return chain.filter(exchange);
             }
             

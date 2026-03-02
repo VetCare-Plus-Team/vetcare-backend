@@ -15,4 +15,5 @@ public class EmployeeDto {
     private String designation;
     private String salaryDetails;
     private LocalDate joinedDate;
+    private String profileImagePath;
 }
