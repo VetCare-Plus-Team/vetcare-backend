@@ -1,18 +1,16 @@
-package com.vetcare.medication;
+package com.vetcare.medication.core.exception;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+@RestControllerAdvice
+public class GlobalMedicationExceptionHandler {
 
-@EnableDiscoveryClient
-@SpringBootApplication
-@ComponentScan(basePackages = "com.vetcare.medication")
-public class MedicationServiceApplication {
-
-    public static void main(String[] args) {
-       
-        new SpringApplication(MedicationServiceApplication.class).run(args);
+    @ExceptionHandler(PrescriptionNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public String handleNotFound(PrescriptionNotFoundException ex) {
+        return ex.getMessage();
     }
 }

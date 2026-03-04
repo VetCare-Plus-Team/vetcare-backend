@@ -9,6 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.core.env.Environment;
 
 import java.util.Arrays;
+import java.util.Collection;
 
 @EnableDiscoveryClient
 @SpringBootApplication
@@ -21,13 +22,19 @@ public class EmployeeServiceApplication {
         this.env = env;
     }
 
-  
     @PostConstruct
     public void initApplication() {
-        log.info("Running with Spring profiles: {}", Arrays.toString(env.getActiveProfiles()));
+        Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
+        if (activeProfiles.contains("dev") && activeProfiles.contains("prod")) {
+            log.error("Critical Configuration Error: 'dev' and 'prod' profiles are both active!");
+        }
+        log.info("Employee Service initialized with profiles: {}", activeProfiles);
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(EmployeeServiceApplication.class, args);
+        SpringApplication app = new SpringApplication(EmployeeServiceApplication.class);
+        // Ensure the app shuts down cleanly, closing database connections first
+        app.setRegisterShutdownHook(true); 
+        app.run(args);
     }
 }
