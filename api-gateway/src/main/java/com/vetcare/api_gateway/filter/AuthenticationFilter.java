@@ -28,8 +28,8 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
         return ((exchange, chain) -> {
             
             String path = exchange.getRequest().getURI().getPath();
-            // Auth endpoints saha Image endpoints walata token nathuwa yanna denawa
-            if (path.contains("/api/auth") || path.contains("/api/employees/image/")) {
+            // Auth endpoints and  Image endpoints goes without token
+            if ( path.contains("/api/auth") || path.contains("/api/employees/image/") || path.contains("/api/qr/image/") || path.contains("api/medical-records/history/")) {
                 return chain.filter(exchange);
             }
             
