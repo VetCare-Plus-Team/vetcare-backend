@@ -3,17 +3,20 @@ package com.vetcare.user_auth_service.services;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.vetcare.user_auth_service.client.EmployeeClient;
+import com.vetcare.user_auth_service.config.RabbitMQConfig;
 import com.vetcare.user_auth_service.dtos.*;
 import com.vetcare.user_auth_service.entity.User;
 import com.vetcare.user_auth_service.exception.ResourceNotFoundException;
 import com.vetcare.user_auth_service.repo.UserRepository;
 import com.vetcare.user_auth_service.shared.JwtUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,6 +29,7 @@ public class AuthServiceImpl implements AuthService{
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
     private final EmployeeClient employeeClient;
+    private final RabbitTemplate rabbitTemplate;
     
     @Override
     public String registerFullUser(UserRegisterDto userDto, EmployeeDto employeeDto, MultipartFile file) {
@@ -55,6 +59,24 @@ public class AuthServiceImpl implements AuthService{
             userRepository.delete(savedUser);
             throw new RuntimeException("Failed to save Employee details. User registration rolled back. Error: " + e.getMessage());
         }
+    
+        // Rabbite MQ
+        try {
+            // RabbitMQ ekata yawanna Log object eka hadanawa
+            LogMessageDto logDto = LogMessageDto.builder()
+                    .userId(savedUser.getId())
+                    .action("USER_REGISTERED")
+                    .serviceName("user-auth-service")
+                    .ipAddress("N/A")
+                    .timestamp(LocalDateTime.now())
+                    .build();
+        
+            rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE, RabbitMQConfig.ROUTING_KEY, logDto);
+        } catch (Exception e) {
+            System.out.println("Failed to send log to RabbitMQ: " + e.getMessage());
+        }
+        
+        
     
         return "Registration Successful!";
     }
@@ -114,9 +136,25 @@ public class AuthServiceImpl implements AuthService{
         } catch (Exception e) {
             throw new RuntimeException("Error occurred while deleting employee files/data: " + e.getMessage());
         }
-    
-       
+        
         userRepository.delete(user);
+        
+       //Rabbite MQ
+        try {
+            LogMessageDto logDto = LogMessageDto.builder()
+                    .userId(userId)
+                    .action("USER_DELETED")
+                    .serviceName("user-auth-service")
+                    .ipAddress("N/A")
+                    .timestamp(LocalDateTime.now())
+                    .build();
+        
+            rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE, RabbitMQConfig.ROUTING_KEY, logDto);
+        } catch (Exception e) {
+            System.out.println("Failed to send log to RabbitMQ: " + e.getMessage());
+        }
+        
+        
         return "User Profile and Associated Files Deleted Successfully!";
     }
     
