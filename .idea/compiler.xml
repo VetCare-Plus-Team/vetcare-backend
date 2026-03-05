@@ -24,23 +24,6 @@
         <module name="clinic-network-service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="api-gateway" target="17" />
-      <module name="appointment-service" target="17" />
-      <module name="calculation-service" target="17" />
-      <module name="clinic-network-service" target="17" />
-      <module name="config-server" target="17" />
-      <module name="employee-service" target="17" />
-      <module name="eureka-server" target="17" />
-      <module name="log-service" target="17" />
-      <module name="medical-record-service" target="17" />
-      <module name="medication-service" target="17" />
-      <module name="notification-service" target="17" />
-      <module name="pet-profile-service" target="17" />
-      <module name="qr-code-service" target="17" />
-      <module name="user-auth-service" target="17" />
-      <module name="vaccination-service" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
