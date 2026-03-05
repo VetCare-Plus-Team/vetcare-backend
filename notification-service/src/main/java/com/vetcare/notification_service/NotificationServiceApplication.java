@@ -1,15 +1,14 @@
-package com.vetcare.notification_service;
+package com.vetcare.notifications.config;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.context.annotation.Bean;
 
-@EnableDiscoveryClient
-@SpringBootApplication
-public class NotificationServiceApplication {
+@Configuration
+public class AppConfig {
 
-	public static void main(String[] args) {
-		SpringApplication.run(NotificationServiceApplication.class, args);
-	}
-
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 }
