@@ -15,7 +15,7 @@ public class CorsConfig {
         CorsConfiguration corsConfig = new CorsConfiguration();
         
         // React frontend eke URL eka methanata denawa (3000 wela run unoth ekath danna puluwan)
-        corsConfig.setAllowedOrigins(Arrays.asList("http://localhost:5174", "http://localhost:3000"));
+        corsConfig.setAllowedOrigins(Arrays.asList("http://localhost:5174", "http://localhost:5173"));
         corsConfig.setMaxAge(3600L); // Pre-flight request cache time eka
         
         // Frontend eken karanna puluwan actions (GET, POST, etc.)
