@@ -1,0 +1,262 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.vetcare:user-auth-service >--------------------
+[INFO] Building user-auth-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ user-auth-service ---
+[INFO] Deleting C:\Users\KVP Prasanna\Desktop\DEA 2\vetcare-backend\user-auth-service\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ user-auth-service ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ user-auth-service ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 18 source files with javac [debug parameters release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/controller/AuthController.java:[20,31] variable authService not initialized in the default constructor
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[36,52] cannot find symbol
+  symbol:   method getUsername()
+  location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[41,33] cannot find symbol
+  symbol:   method getUsername()
+  location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[42,30] cannot find symbol
+  symbol:   method getEmail()
+  location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[43,60] cannot find symbol
+  symbol:   method getPassword()
+  location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[44,29] cannot find symbol
+  symbol:   method getRole()
+  location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[45,13] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[56,52] cannot find symbol
+  symbol:   method getId()
+  location: variable savedUser of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[66,49] cannot find symbol
+  symbol:   method builder()
+  location: class com.vetcare.user_auth_service.dtos.LogMessageDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[67,38] cannot find symbol
+  symbol:   method getId()
+  location: variable savedUser of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[88,58] cannot find symbol
+  symbol:   method getUsername()
+  location: variable request of type com.vetcare.user_auth_service.dtos.AuthRequestDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[91,45] cannot find symbol
+  symbol:   method getPassword()
+  location: variable request of type com.vetcare.user_auth_service.dtos.AuthRequestDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[91,65] cannot find symbol
+  symbol:   method getPasswordHash()
+  location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[95,50] cannot find symbol
+  symbol:   method getUsername()
+  location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[95,70] cannot find symbol
+  symbol:   method getRole()
+  location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[95,86] cannot find symbol
+  symbol:   method getId()
+  location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[96,67] cannot find symbol
+  symbol:   method getRole()
+  location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[96,47] cannot find symbol
+  symbol:   method getUsername()
+  location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[106,30] cannot find symbol
+  symbol:   method getEmail()
+  location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[107,29] cannot find symbol
+  symbol:   method getRole()
+  location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[108,19] cannot find symbol
+  symbol:   method getPassword()
+  location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[108,53] cannot find symbol
+  symbol:   method getPassword()
+  location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[109,64] cannot find symbol
+  symbol:   method getPassword()
+  location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[144,49] cannot find symbol
+  symbol:   method builder()
+  location: class com.vetcare.user_auth_service.dtos.LogMessageDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[170,49] invalid method reference
+  cannot find symbol
+    symbol:   method getId()
+    location: class com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[179,35] cannot find symbol
+  symbol:   method getUserId()
+  location: variable e of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[179,59] cannot find symbol
+  symbol:   method getId()
+  location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[185,35] cannot find symbol
+  symbol:   method getProfileImagePath()
+  location: variable emp of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[186,78] cannot find symbol
+  symbol:   method getProfileImagePath()
+  location: variable emp of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[197,38] cannot find symbol
+  symbol:   method getDesignation()
+  location: variable emp of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[196,38] cannot find symbol
+  symbol:   method getContact()
+  location: variable emp of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[195,38] cannot find symbol
+  symbol:   method getLastName()
+  location: variable emp of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[194,38] cannot find symbol
+  symbol:   method getFirstName()
+  location: variable emp of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[193,25] cannot find symbol
+  symbol:   method getRole()
+  location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[192,25] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[191,25] cannot find symbol
+  symbol:   method getUsername()
+  location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[190,25] cannot find symbol
+  symbol:   method getId()
+  location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[200,19] incompatible types: inference variable T has incompatible bounds
+    equality constraints: com.vetcare.user_auth_service.dtos.UserEmployeeResponseDto
+    lower bounds: java.lang.Object
+[INFO] 38 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.475 s
+[INFO] Finished at: 2026-03-06T10:21:20+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project user-auth-service: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/controller/AuthController.java:[20,31] variable authService not initialized in the default constructor
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[36,52] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[41,33] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[42,30] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[43,60] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[44,29] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[45,13] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[56,52] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable savedUser of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[66,49] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.vetcare.user_auth_service.dtos.LogMessageDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[67,38] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable savedUser of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[88,58] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable request of type com.vetcare.user_auth_service.dtos.AuthRequestDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[91,45] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable request of type com.vetcare.user_auth_service.dtos.AuthRequestDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[91,65] cannot find symbol
+[ERROR]   symbol:   method getPasswordHash()
+[ERROR]   location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[95,50] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[95,70] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[95,86] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[96,67] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[96,47] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[106,30] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[107,29] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[108,19] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[108,53] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[109,64] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable userDto of type com.vetcare.user_auth_service.dtos.UserRegisterDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[144,49] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.vetcare.user_auth_service.dtos.LogMessageDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[170,49] invalid method reference
+[ERROR]   cannot find symbol
+[ERROR]     symbol:   method getId()
+[ERROR]     location: class com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[179,35] cannot find symbol
+[ERROR]   symbol:   method getUserId()
+[ERROR]   location: variable e of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[179,59] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[185,35] cannot find symbol
+[ERROR]   symbol:   method getProfileImagePath()
+[ERROR]   location: variable emp of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[186,78] cannot find symbol
+[ERROR]   symbol:   method getProfileImagePath()
+[ERROR]   location: variable emp of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[197,38] cannot find symbol
+[ERROR]   symbol:   method getDesignation()
+[ERROR]   location: variable emp of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[196,38] cannot find symbol
+[ERROR]   symbol:   method getContact()
+[ERROR]   location: variable emp of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[195,38] cannot find symbol
+[ERROR]   symbol:   method getLastName()
+[ERROR]   location: variable emp of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[194,38] cannot find symbol
+[ERROR]   symbol:   method getFirstName()
+[ERROR]   location: variable emp of type com.vetcare.user_auth_service.dtos.EmployeeDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[193,25] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[192,25] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[191,25] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[190,25] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable user of type com.vetcare.user_auth_service.entity.User
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/user-auth-service/src/main/java/com/vetcare/user_auth_service/services/AuthServiceImpl.java:[200,19] incompatible types: inference variable T has incompatible bounds
+[ERROR]     equality constraints: com.vetcare.user_auth_service.dtos.UserEmployeeResponseDto
+[ERROR]     lower bounds: java.lang.Object
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
