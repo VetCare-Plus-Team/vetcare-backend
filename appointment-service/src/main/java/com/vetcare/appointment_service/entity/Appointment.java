@@ -1,6 +1,5 @@
 package com.vetcare.appointment_service.entity;
 
-
 import com.vetcare.appointment_service.enums.AppointmentStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,15 +20,16 @@ public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private Long petId; // Pet Profile Service eke thiyena Pet ge ID eka
     private Long doctorId; // Employee Service eke thiyena Doctor ge ID eka
-    
+
     private LocalDate appointmentDate;
     private LocalTime appointmentTime;
-    
+
     private String reason; // E.g., "Vaccination", "Checkup"
-    
+    private String notes; // Additional notes
+
     @Enumerated(EnumType.STRING)
     private AppointmentStatus status;
 }

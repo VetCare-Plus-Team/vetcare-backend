@@ -19,25 +19,51 @@ public class VaccinationService {
     private final VaccinationRepository repo;
     private final RabbitTemplate rabbitTemplate;
     private final CalculationClient calculationClient;
-    
+
     public Vaccination addVaccine(Vaccination vaccination) {
         // Next date eka dila nattam auto calculate karanawa
         if (vaccination.getNextDueDate() == null) {
             LocalDate nextDate = calculationClient.getNextDate(
                     vaccination.getVaccineName(),
-                    vaccination.getDateAdministered()
-            );
+                    vaccination.getDateAdministered());
             vaccination.setNextDueDate(nextDate);
         }
         Vaccination saved = repo.save(vaccination);
         sendLog("VACCINE_ADDED", saved.getPetId());
         return saved;
     }
-    
+
     public List<Vaccination> getVaccinesByPetId(Long petId) {
         return repo.findByPetId(petId);
     }
-    
+
+    public Vaccination updateVaccine(Long id, Vaccination details) {
+        Vaccination vaccination = repo.findById(id).orElseThrow(() -> new RuntimeException("Vaccination not found"));
+        vaccination.setVaccineName(details.getVaccineName());
+        vaccination.setType(details.getType());
+        vaccination.setDose(details.getDose());
+        vaccination.setDateAdministered(details.getDateAdministered());
+        vaccination.setNextDueDate(details.getNextDueDate());
+
+        // Recalculate if next date is still null
+        if (vaccination.getNextDueDate() == null) {
+            LocalDate nextDate = calculationClient.getNextDate(
+                    vaccination.getVaccineName(),
+                    vaccination.getDateAdministered());
+            vaccination.setNextDueDate(nextDate);
+        }
+
+        Vaccination saved = repo.save(vaccination);
+        sendLog("VACCINE_UPDATED", saved.getPetId());
+        return saved;
+    }
+
+    public void deleteVaccine(Long id) {
+        Vaccination vaccination = repo.findById(id).orElseThrow(() -> new RuntimeException("Vaccination not found"));
+        repo.deleteById(id);
+        sendLog("VACCINE_DELETED", vaccination.getPetId());
+    }
+
     private void sendLog(String action, Long targetId) {
         try {
             LogMessageDto logDto = LogMessageDto.builder()
@@ -52,10 +78,12 @@ public class VaccinationService {
             System.out.println("RabbitMQ Log Failed: " + e.getMessage());
         }
     }
-    
-    
+
     public List<Vaccination> getUpcomingVaccines(LocalDate startDate, LocalDate endDate) {
         return repo.findByNextDueDateBetween(startDate, endDate);
     }
-    
+
+    public List<Vaccination> getVaccinationsByDoctor(Long doctorId) {
+        return repo.findByDoctorId(doctorId);
+    }
 }

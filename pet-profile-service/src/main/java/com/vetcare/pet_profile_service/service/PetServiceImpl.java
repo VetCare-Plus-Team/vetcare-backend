@@ -20,18 +20,17 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 @Service
 @RequiredArgsConstructor
-public class PetServiceImpl implements PetService{
-    
+public class PetServiceImpl implements PetService {
+
     private final OwnerRepository ownerRepository;
     private final PetRepository petRepository;
     private final QrServiceClient qrServiceClient;
     private final RabbitTemplate rabbitTemplate;
-    
+
     @Override
-    public Owner registerOwner(OwnerDto dto) {
+    public OwnerDto registerOwner(OwnerDto dto) {
         Owner owner = new Owner();
         owner.setFirstName(dto.getFirstName());
         owner.setLastName(dto.getLastName());
@@ -39,17 +38,59 @@ public class PetServiceImpl implements PetService{
         owner.setEmail(dto.getEmail());
         owner.setAddress(dto.getAddress());
         Owner savedOwner = ownerRepository.save(owner);
-    
+
         sendLog("OWNER_REGISTERED", savedOwner.getId());
-        return savedOwner;
+        return mapToOwnerDto(savedOwner);
     }
-    
+
+    @Override
+    public OwnerDto getOwnerById(Long ownerId) {
+        Owner owner = ownerRepository.findById(ownerId)
+                .orElseThrow(() -> new ResourceNotFoundException("Owner not found with ID: " + ownerId));
+        return mapToOwnerDto(owner);
+    }
+
+    @Override
+    public OwnerDto updateOwner(Long ownerId, OwnerDto dto) {
+        Owner owner = ownerRepository.findById(ownerId)
+                .orElseThrow(() -> new ResourceNotFoundException("Owner not found with ID: " + ownerId));
+        owner.setFirstName(dto.getFirstName());
+        owner.setLastName(dto.getLastName());
+        owner.setContact(dto.getContact());
+        owner.setEmail(dto.getEmail());
+        owner.setAddress(dto.getAddress());
+        Owner updated = ownerRepository.save(owner);
+        sendLog("OWNER_UPDATED", updated.getId());
+        return mapToOwnerDto(updated);
+    }
+
     @Override
     @Transactional
-    public Pet registerPet(PetDto dto) {
+    public void deleteOwner(Long ownerId) {
+        Owner owner = ownerRepository.findById(ownerId)
+                .orElseThrow(() -> new ResourceNotFoundException("Owner not found with ID: " + ownerId));
+
+        // Find and delete all pets related to this owner first to avoid FK constraint
+        // errors
+        // and to ensure QR codes are deleted via deletePet().
+        List<Pet> pets = petRepository.findByOwnerId(ownerId);
+        for (Pet pet : pets) {
+            deletePet(pet.getId());
+        }
+
+        // Force JPA to execute the pet deletion queries before deleting the owner
+        petRepository.flush();
+
+        ownerRepository.delete(owner);
+        sendLog("OWNER_DELETED", ownerId);
+    }
+
+    @Override
+    @Transactional
+    public PetResponseDto registerPet(PetDto dto) {
         Owner owner = ownerRepository.findById(dto.getOwnerId())
                 .orElseThrow(() -> new RuntimeException("Owner not found!"));
-    
+
         // A. Register PET
         Pet pet = new Pet();
         pet.setName(dto.getName());
@@ -57,9 +98,10 @@ public class PetServiceImpl implements PetService{
         pet.setBreed(dto.getBreed());
         pet.setAge(dto.getAge());
         pet.setGender(dto.getGender());
+        pet.setWeight(dto.getWeight());
         pet.setOwner(owner);
         Pet savedPet = petRepository.save(pet);
-    
+
         // B.Cretae QR to call qr service using feing client
         try {
             String qrFileName = qrServiceClient.generateQrForPet(savedPet.getId());
@@ -67,44 +109,44 @@ public class PetServiceImpl implements PetService{
             petRepository.save(savedPet);
         } catch (Exception e) {
             System.out.println("QR Code generation failed: " + e.getMessage());
-            
+
         }
-    
+
         // C. Create LOG
         sendLog("PET_REGISTERED", savedPet.getId());
-    
-        return savedPet;
+
+        return mapToPetResponseDto(savedPet);
     }
-    
-    
-    
+
+    @Override
     @Transactional
-    public Pet updatePet(Long petId, PetDto dto) {
+    public PetResponseDto updatePet(Long petId, PetDto dto) {
         Pet pet = petRepository.findById(petId)
                 .orElseThrow(() -> new RuntimeException("Pet not found with ID: " + petId));
-        
+
         Owner owner = ownerRepository.findById(dto.getOwnerId())
                 .orElseThrow(() -> new RuntimeException("Owner not found with ID: " + dto.getOwnerId()));
-        
+
         pet.setName(dto.getName());
         pet.setSpecies(dto.getSpecies());
         pet.setBreed(dto.getBreed());
         pet.setAge(dto.getAge());
         pet.setGender(dto.getGender());
+        pet.setWeight(dto.getWeight());
         pet.setOwner(owner); // Owner wa wenas karannath puluwan
-        
+
         Pet updatedPet = petRepository.save(pet);
-        
+
         sendLog("PET_UPDATED", updatedPet.getId());
-        return updatedPet;
+        return mapToPetResponseDto(updatedPet);
     }
-    
+
     // 4. Pet wa Delete kireema (QR ekath ekkama)
     @Transactional
     public void deletePet(Long petId) {
         Pet pet = petRepository.findById(petId)
                 .orElseThrow(() -> new RuntimeException("Pet not found with ID: " + petId));
-        
+
         // QR Code file eka QR service eken makala danawa
         if (pet.getQrCodeFileName() != null) {
             try {
@@ -113,11 +155,11 @@ public class PetServiceImpl implements PetService{
                 System.out.println("Failed to delete QR code file: " + e.getMessage());
             }
         }
-        
+
         petRepository.delete(pet);
         sendLog("PET_DELETED", petId);
     }
-    
+
     private void sendLog(String action, Long targetId) {
         try {
             LogMessageDto logDto = LogMessageDto.builder()
@@ -132,31 +174,28 @@ public class PetServiceImpl implements PetService{
             System.out.println("RabbitMQ Log Failed: " + e.getMessage());
         }
     }
-    
-    
-    
+
     // 5. Get All Owners
     public List<OwnerDto> getAllOwners() {
         return ownerRepository.findAll().stream()
                 .map(this::mapToOwnerDto)
                 .collect(Collectors.toList());
     }
-    
+
     // 6. Get All Pets
     public List<PetResponseDto> getAllPets() {
         return petRepository.findAll().stream()
                 .map(this::mapToPetResponseDto)
                 .collect(Collectors.toList());
     }
-    
-    
+
     // 7. Get Pet By ID
     public PetResponseDto getPetById(Long petId) {
         Pet pet = petRepository.findById(petId)
                 .orElseThrow(() -> new ResourceNotFoundException("Pet not found with ID: " + petId));
         return mapToPetResponseDto(pet);
     }
-    
+
     // --- Helper Methods ---
     private OwnerDto mapToOwnerDto(Owner owner) {
         OwnerDto dto = new OwnerDto();
@@ -168,7 +207,7 @@ public class PetServiceImpl implements PetService{
         dto.setAddress(owner.getAddress());
         return dto;
     }
-    
+
     private PetResponseDto mapToPetResponseDto(Pet pet) {
         PetResponseDto dto = new PetResponseDto();
         dto.setId(pet.getId());
@@ -177,20 +216,18 @@ public class PetServiceImpl implements PetService{
         dto.setBreed(pet.getBreed());
         dto.setAge(pet.getAge());
         dto.setGender(pet.getGender());
+        dto.setWeight(pet.getWeight());
         dto.setQrCodeFileName(pet.getQrCodeFileName());
-        
-        //  Generate QR Code Full URL
+
+        // Generate QR Code Full URL
         if (pet.getQrCodeFileName() != null) {
             dto.setQrCodeUrl("http://localhost:8080/api/qr/image/" + pet.getQrCodeFileName());
         }
-        
+
         if (pet.getOwner() != null) {
             dto.setOwner(mapToOwnerDto(pet.getOwner()));
         }
         return dto;
     }
-    
-    
-    
-    
+
 }

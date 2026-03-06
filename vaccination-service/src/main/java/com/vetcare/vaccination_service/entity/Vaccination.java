@@ -1,6 +1,5 @@
 package com.vetcare.vaccination_service.entity;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -15,6 +14,8 @@ public class Vaccination {
     private Long id;
     private Long petId;
     private String vaccineName;
+    private String type;
+    private String dose;
     private LocalDate dateAdministered;
     private LocalDate nextDueDate;
     private Long doctorId;

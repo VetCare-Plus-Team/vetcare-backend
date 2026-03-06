@@ -2,16 +2,21 @@ package com.vetcare.pet_profile_service.service;
 
 import com.vetcare.pet_profile_service.dto.OwnerDto;
 import com.vetcare.pet_profile_service.dto.PetDto;
-import com.vetcare.pet_profile_service.entity.Owner;
-import com.vetcare.pet_profile_service.entity.Pet;
+import com.vetcare.pet_profile_service.dto.PetResponseDto;
 
 public interface PetService {
-    
-    Owner registerOwner(OwnerDto dto);
-    
-    Pet registerPet(PetDto dto);
-    
+
+    OwnerDto registerOwner(OwnerDto dto);
+
+    OwnerDto getOwnerById(Long ownerId);
+
+    OwnerDto updateOwner(Long ownerId, OwnerDto dto);
+
+    void deleteOwner(Long ownerId);
+
+    PetResponseDto registerPet(PetDto dto);
+
     void deletePet(Long petId);
-    
-    Pet updatePet(Long petId, PetDto dto);
+
+    PetResponseDto updatePet(Long petId, PetDto dto);
 }

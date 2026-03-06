@@ -1,6 +1,5 @@
 package com.vetcare.medical_record_service.entity;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +22,8 @@ public class MedicalRecord {
     private String symptoms;
     private String diagnosis;
     private String treatment;
+    private String notes;
     private LocalDate visitDate;
+    private LocalDate followUpDate;
     private Long doctorId;
 }
