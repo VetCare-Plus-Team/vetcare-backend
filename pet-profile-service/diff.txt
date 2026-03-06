@@ -1,0 +1,404 @@
+diff --git a/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/controller/PetController.java b/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/controller/PetController.java
+index cf9c2ef..3478a78 100644
+--- a/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/controller/PetController.java
++++ b/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/controller/PetController.java
+@@ -1,6 +1,5 @@
+ package com.vetcare.pet_profile_service.controller;
+ 
+-
+ import com.vetcare.pet_profile_service.dto.OwnerDto;
+ import com.vetcare.pet_profile_service.dto.PetDto;
+ import com.vetcare.pet_profile_service.service.PetServiceImpl;
+@@ -14,85 +13,119 @@ import org.springframework.web.bind.annotation.*;
+ @RequiredArgsConstructor
+ public class PetController {
+     private final PetServiceImpl petService;
+-    
++
+     @PostMapping("/owner")
+     public ResponseEntity<?> addOwner(
+             @RequestHeader(value = "X-User-Role", required = false) String role,
+             @RequestBody OwnerDto dto) {
+-        
++
+         if (!isAdmin(role)) {
+             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access Denied: Only ADMIN can register Owners.");
+         }
+         return ResponseEntity.ok(petService.registerOwner(dto));
+     }
+-    
++
++    @GetMapping("/owner/{ownerId}")
++    public ResponseEntity<?> getOwnerById(
++            @PathVariable Long ownerId,
++            @RequestHeader(value = "X-User-Role", required = false) String role) {
++
++        if (!isAdmin(role)) {
++            return ResponseEntity.status(HttpStatus.FORBIDDEN)
++                    .body("Access Denied: Only ADMIN can view Owner details.");
++        }
++        return ResponseEntity.ok(petService.getOwnerById(ownerId));
++    }
++
++    @PutMapping("/owner/{ownerId}")
++    public ResponseEntity<?> updateOwner(
++            @PathVariable Long ownerId,
++            @RequestHeader(value = "X-User-Role", required = false) String role,
++            @RequestBody OwnerDto dto) {
++
++        if (!isAdmin(role)) {
++            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access Denied: Only ADMIN can update Owners.");
++        }
++        return ResponseEntity.ok(petService.updateOwner(ownerId, dto));
++    }
++
++    @DeleteMapping("/owner/{ownerId}")
++    public ResponseEntity<?> deleteOwner(
++            @PathVariable Long ownerId,
++            @RequestHeader(value = "X-User-Role", required = false) String role) {
++
++        if (!isAdmin(role)) {
++            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access Denied: Only ADMIN can delete Owners.");
++        }
++        petService.deleteOwner(ownerId);
++        return ResponseEntity.ok("Owner deleted successfully!");
++    }
++
+     @PostMapping("/pet")
+     public ResponseEntity<?> addPet(
+             @RequestHeader(value = "X-User-Role", required = false) String role,
+             @RequestBody PetDto dto) {
+-        
++
+         if (!isAdmin(role)) {
+             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access Denied: Only ADMIN can register Pets.");
+         }
+         return ResponseEntity.ok(petService.registerPet(dto));
+     }
+-    
++
+     @PutMapping("/pet/{petId}")
+     public ResponseEntity<?> updatePet(
+             @PathVariable Long petId,
+             @RequestHeader(value = "X-User-Role", required = false) String role,
+             @RequestBody PetDto dto) {
+-        
++
+         if (!isAdmin(role)) {
+             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access Denied: Only ADMIN can update Pets.");
+         }
+         return ResponseEntity.ok(petService.updatePet(petId, dto));
+     }
+-    
++
+     @DeleteMapping("/pet/{petId}")
+     public ResponseEntity<?> deletePet(
+             @PathVariable Long petId,
+             @RequestHeader(value = "X-User-Role", required = false) String role) {
+-        
++
+         if (!isAdmin(role)) {
+             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access Denied: Only ADMIN can delete Pets.");
+         }
+         petService.deletePet(petId);
+         return ResponseEntity.ok("Pet and associated QR Code deleted successfully!");
+     }
+-    
+-    
++
+     // Helper method For Cheack ADMIN
+     private boolean isAdmin(String role) {
+-        return role != null && role.equals("ADMIN");
++        return role != null && role.equalsIgnoreCase("ADMIN");
+     }
+-    
+-    
++
+     @GetMapping("/owner")
+     public ResponseEntity<?> getAllOwners(
+             @RequestHeader(value = "X-User-Role", required = false) String role) {
+-        
++
+         if (!isAdmin(role)) {
+             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access Denied: Only ADMIN can view Owners.");
+         }
+         return ResponseEntity.ok(petService.getAllOwners());
+     }
+-    
++
+     @GetMapping("/pet")
+     public ResponseEntity<?> getAllPets(
+             @RequestHeader(value = "X-User-Role", required = false) String role) {
+-        
++
+         if (!isAdmin(role)) {
+             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access Denied: Only ADMIN can view Pets.");
+         }
+         return ResponseEntity.ok(petService.getAllPets());
+     }
+-    
++
+     @GetMapping("/pet/{petId}")
+     public ResponseEntity<?> getPetById(
+             @PathVariable Long petId,
+             @RequestHeader(value = "X-User-Role", required = false) String role) {
+-        
++
+         if (!isAdmin(role)) {
+             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access Denied: Only ADMIN can view Pet details.");
+         }
+diff --git a/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetService.java b/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetService.java
+index 8b964d1..b30ac2c 100644
+--- a/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetService.java
++++ b/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetService.java
+@@ -9,9 +9,16 @@ public interface PetService {
+     
+     Owner registerOwner(OwnerDto dto);
+     
++    OwnerDto getOwnerById(Long ownerId);
++    
++    OwnerDto updateOwner(Long ownerId, OwnerDto dto);
++    
++    void deleteOwner(Long ownerId);
++    
+     Pet registerPet(PetDto dto);
+     
+     void deletePet(Long petId);
+     
+     Pet updatePet(Long petId, PetDto dto);
+ }
++
+diff --git a/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java b/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java
+index 5e511b2..8e036c9 100644
+--- a/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java
++++ b/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java
+@@ -20,16 +20,15 @@ import java.time.LocalDateTime;
+ import java.util.List;
+ import java.util.stream.Collectors;
+ 
+-
+ @Service
+ @RequiredArgsConstructor
+-public class PetServiceImpl implements PetService{
+-    
++public class PetServiceImpl implements PetService {
++
+     private final OwnerRepository ownerRepository;
+     private final PetRepository petRepository;
+     private final QrServiceClient qrServiceClient;
+     private final RabbitTemplate rabbitTemplate;
+-    
++
+     @Override
+     public Owner registerOwner(OwnerDto dto) {
+         Owner owner = new Owner();
+@@ -39,17 +38,59 @@ public class PetServiceImpl implements PetService{
+         owner.setEmail(dto.getEmail());
+         owner.setAddress(dto.getAddress());
+         Owner savedOwner = ownerRepository.save(owner);
+-    
++
+         sendLog("OWNER_REGISTERED", savedOwner.getId());
+         return savedOwner;
+     }
+-    
++
++    @Override
++    public OwnerDto getOwnerById(Long ownerId) {
++        Owner owner = ownerRepository.findById(ownerId)
++                .orElseThrow(() -> new ResourceNotFoundException("Owner not found with ID: " + ownerId));
++        return mapToOwnerDto(owner);
++    }
++
++    @Override
++    public OwnerDto updateOwner(Long ownerId, OwnerDto dto) {
++        Owner owner = ownerRepository.findById(ownerId)
++                .orElseThrow(() -> new ResourceNotFoundException("Owner not found with ID: " + ownerId));
++        owner.setFirstName(dto.getFirstName());
++        owner.setLastName(dto.getLastName());
++        owner.setContact(dto.getContact());
++        owner.setEmail(dto.getEmail());
++        owner.setAddress(dto.getAddress());
++        Owner updated = ownerRepository.save(owner);
++        sendLog("OWNER_UPDATED", updated.getId());
++        return mapToOwnerDto(updated);
++    }
++
++    @Override
++    @Transactional
++    public void deleteOwner(Long ownerId) {
++        Owner owner = ownerRepository.findById(ownerId)
++                .orElseThrow(() -> new ResourceNotFoundException("Owner not found with ID: " + ownerId));
++
++        // Find and delete all pets related to this owner first to avoid FK constraint
++        // errors
++        // and to ensure QR codes are deleted via deletePet().
++        List<Pet> pets = petRepository.findByOwnerId(ownerId);
++        for (Pet pet : pets) {
++            deletePet(pet.getId());
++        }
++
++        // Force JPA to execute the pet deletion queries before deleting the owner
++        petRepository.flush();
++
++        ownerRepository.delete(owner);
++        sendLog("OWNER_DELETED", ownerId);
++    }
++
+     @Override
+     @Transactional
+     public Pet registerPet(PetDto dto) {
+         Owner owner = ownerRepository.findById(dto.getOwnerId())
+                 .orElseThrow(() -> new RuntimeException("Owner not found!"));
+-    
++
+         // A. Register PET
+         Pet pet = new Pet();
+         pet.setName(dto.getName());
+@@ -59,7 +100,7 @@ public class PetServiceImpl implements PetService{
+         pet.setGender(dto.getGender());
+         pet.setOwner(owner);
+         Pet savedPet = petRepository.save(pet);
+-    
++
+         // B.Cretae QR to call qr service using feing client
+         try {
+             String qrFileName = qrServiceClient.generateQrForPet(savedPet.getId());
+@@ -67,44 +108,42 @@ public class PetServiceImpl implements PetService{
+             petRepository.save(savedPet);
+         } catch (Exception e) {
+             System.out.println("QR Code generation failed: " + e.getMessage());
+-            
++
+         }
+-    
++
+         // C. Create LOG
+         sendLog("PET_REGISTERED", savedPet.getId());
+-    
++
+         return savedPet;
+     }
+-    
+-    
+-    
++
+     @Transactional
+     public Pet updatePet(Long petId, PetDto dto) {
+         Pet pet = petRepository.findById(petId)
+                 .orElseThrow(() -> new RuntimeException("Pet not found with ID: " + petId));
+-        
++
+         Owner owner = ownerRepository.findById(dto.getOwnerId())
+                 .orElseThrow(() -> new RuntimeException("Owner not found with ID: " + dto.getOwnerId()));
+-        
++
+         pet.setName(dto.getName());
+         pet.setSpecies(dto.getSpecies());
+         pet.setBreed(dto.getBreed());
+         pet.setAge(dto.getAge());
+         pet.setGender(dto.getGender());
+         pet.setOwner(owner); // Owner wa wenas karannath puluwan
+-        
++
+         Pet updatedPet = petRepository.save(pet);
+-        
++
+         sendLog("PET_UPDATED", updatedPet.getId());
+         return updatedPet;
+     }
+-    
++
+     // 4. Pet wa Delete kireema (QR ekath ekkama)
+     @Transactional
+     public void deletePet(Long petId) {
+         Pet pet = petRepository.findById(petId)
+                 .orElseThrow(() -> new RuntimeException("Pet not found with ID: " + petId));
+-        
++
+         // QR Code file eka QR service eken makala danawa
+         if (pet.getQrCodeFileName() != null) {
+             try {
+@@ -113,11 +152,11 @@ public class PetServiceImpl implements PetService{
+                 System.out.println("Failed to delete QR code file: " + e.getMessage());
+             }
+         }
+-        
++
+         petRepository.delete(pet);
+         sendLog("PET_DELETED", petId);
+     }
+-    
++
+     private void sendLog(String action, Long targetId) {
+         try {
+             LogMessageDto logDto = LogMessageDto.builder()
+@@ -132,31 +171,28 @@ public class PetServiceImpl implements PetService{
+             System.out.println("RabbitMQ Log Failed: " + e.getMessage());
+         }
+     }
+-    
+-    
+-    
++
+     // 5. Get All Owners
+     public List<OwnerDto> getAllOwners() {
+         return ownerRepository.findAll().stream()
+                 .map(this::mapToOwnerDto)
+                 .collect(Collectors.toList());
+     }
+-    
++
+     // 6. Get All Pets
+     public List<PetResponseDto> getAllPets() {
+         return petRepository.findAll().stream()
+                 .map(this::mapToPetResponseDto)
+                 .collect(Collectors.toList());
+     }
+-    
+-    
++
+     // 7. Get Pet By ID
+     public PetResponseDto getPetById(Long petId) {
+         Pet pet = petRepository.findById(petId)
+                 .orElseThrow(() -> new ResourceNotFoundException("Pet not found with ID: " + petId));
+         return mapToPetResponseDto(pet);
+     }
+-    
++
+     // --- Helper Methods ---
+     private OwnerDto mapToOwnerDto(Owner owner) {
+         OwnerDto dto = new OwnerDto();
+@@ -168,7 +204,7 @@ public class PetServiceImpl implements PetService{
+         dto.setAddress(owner.getAddress());
+         return dto;
+     }
+-    
++
+     private PetResponseDto mapToPetResponseDto(Pet pet) {
+         PetResponseDto dto = new PetResponseDto();
+         dto.setId(pet.getId());
+@@ -178,19 +214,16 @@ public class PetServiceImpl implements PetService{
+         dto.setAge(pet.getAge());
+         dto.setGender(pet.getGender());
+         dto.setQrCodeFileName(pet.getQrCodeFileName());
+-        
+-        //  Generate QR Code Full URL
++
++        // Generate QR Code Full URL
+         if (pet.getQrCodeFileName() != null) {
+             dto.setQrCodeUrl("http://localhost:8080/api/qr/image/" + pet.getQrCodeFileName());
+         }
+-        
++
+         if (pet.getOwner() != null) {
+             dto.setOwner(mapToOwnerDto(pet.getOwner()));
+         }
+         return dto;
+     }
+-    
+-    
+-    
+-    
++
+ }
