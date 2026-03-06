@@ -1,6 +1,5 @@
 package com.vetcare.medication_service.entity;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,6 +16,9 @@ public class Medication {
     private String medicineName;
     private String dosage; // e.g., "1 pill"
     private String frequency; // e.g., "Twice a day"
+    private String duration; // e.g., "7 days"
+    private String instructions;
+    private String status; // ACTIVE, COMPLETED, CANCELLED
     private LocalDate startDate;
     private LocalDate endDate;
     private Long doctorId;

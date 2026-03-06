@@ -19,7 +19,14 @@
         <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/log-service/pom.xml" />
         <option value="$PROJECT_DIR$/employee-service/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/clinic-network-service/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="17" project-jdk-type="JavaSDK" />

@@ -13,7 +13,6 @@
         <module name="notification-service" />
         <module name="calculation-service" />
         <module name="employee-service" />
-        <module name="config-server" />
         <module name="pet-profile-service" />
         <module name="vaccination-service" />
         <module name="medical-record-service" />
@@ -21,9 +20,13 @@
         <module name="log-service" />
         <module name="user-auth-service" />
         <module name="medication-service" />
-        <module name="clinic-network-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="clinic-network-service" target="17" />
+      <module name="config-server" target="17" />
+      <module name="vetcare-backend" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

@@ -1,0 +1,358 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.vetcare:pet-profile-service:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.version' for org.testng:testng:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 77, column 13
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------< com.vetcare:pet-profile-service >-------------------
+[INFO] Building pet-profile-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ pet-profile-service ---
+[INFO] Deleting C:\Users\KVP Prasanna\Desktop\DEA 2\vetcare-backend\pet-profile-service\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-profile-service ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ pet-profile-service ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 16 source files with javac [debug parameters release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/controller/PetController.java:[15,34] variable petService not initialized in the default constructor
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[35,31] cannot find symbol
+  symbol:   method getFirstName()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[36,30] cannot find symbol
+  symbol:   method getLastName()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[37,29] cannot find symbol
+  symbol:   method getContact()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[38,27] cannot find symbol
+  symbol:   method getEmail()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[39,29] cannot find symbol
+  symbol:   method getAddress()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[42,47] cannot find symbol
+  symbol:   method getId()
+  location: variable savedOwner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[57,31] cannot find symbol
+  symbol:   method getFirstName()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[58,30] cannot find symbol
+  symbol:   method getLastName()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[59,29] cannot find symbol
+  symbol:   method getContact()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[60,27] cannot find symbol
+  symbol:   method getEmail()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[61,29] cannot find symbol
+  symbol:   method getAddress()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[63,41] cannot find symbol
+  symbol:   method getId()
+  location: variable updated of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[78,26] cannot find symbol
+  symbol:   method getId()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[91,51] cannot find symbol
+  symbol:   method getOwnerId()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[96,24] cannot find symbol
+  symbol:   method getName()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[97,27] cannot find symbol
+  symbol:   method getSpecies()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[98,25] cannot find symbol
+  symbol:   method getBreed()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[99,23] cannot find symbol
+  symbol:   method getAge()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[100,26] cannot find symbol
+  symbol:   method getGender()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[101,12] cannot find symbol
+  symbol:   method setOwner(com.vetcare.pet_profile_service.entity.Owner)
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[106,74] cannot find symbol
+  symbol:   method getId()
+  location: variable savedPet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[107,21] cannot find symbol
+  symbol:   method setQrCodeFileName(java.lang.String)
+  location: variable savedPet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[115,43] cannot find symbol
+  symbol:   method getId()
+  location: variable savedPet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[125,51] cannot find symbol
+  symbol:   method getOwnerId()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[126,90] cannot find symbol
+  symbol:   method getOwnerId()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[128,24] cannot find symbol
+  symbol:   method getName()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[129,27] cannot find symbol
+  symbol:   method getSpecies()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[130,25] cannot find symbol
+  symbol:   method getBreed()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[131,23] cannot find symbol
+  symbol:   method getAge()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[132,26] cannot find symbol
+  symbol:   method getGender()
+  location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[133,12] cannot find symbol
+  symbol:   method setOwner(com.vetcare.pet_profile_service.entity.Owner)
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[137,42] cannot find symbol
+  symbol:   method getId()
+  location: variable updatedPet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[148,16] cannot find symbol
+  symbol:   method getQrCodeFileName()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[150,49] cannot find symbol
+  symbol:   method getQrCodeFileName()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[162,49] cannot find symbol
+  symbol:   method builder()
+  location: class com.vetcare.pet_profile_service.dto.LogMessageDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[199,24] cannot find symbol
+  symbol:   method getId()
+  location: variable owner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[200,31] cannot find symbol
+  symbol:   method getFirstName()
+  location: variable owner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[201,30] cannot find symbol
+  symbol:   method getLastName()
+  location: variable owner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[202,29] cannot find symbol
+  symbol:   method getContact()
+  location: variable owner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[203,27] cannot find symbol
+  symbol:   method getEmail()
+  location: variable owner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[204,29] cannot find symbol
+  symbol:   method getAddress()
+  location: variable owner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[210,22] cannot find symbol
+  symbol:   method getId()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[211,24] cannot find symbol
+  symbol:   method getName()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[212,27] cannot find symbol
+  symbol:   method getSpecies()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[213,25] cannot find symbol
+  symbol:   method getBreed()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[214,23] cannot find symbol
+  symbol:   method getAge()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[215,26] cannot find symbol
+  symbol:   method getGender()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[216,34] cannot find symbol
+  symbol:   method getQrCodeFileName()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[219,16] cannot find symbol
+  symbol:   method getQrCodeFileName()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[220,73] cannot find symbol
+  symbol:   method getQrCodeFileName()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[223,16] cannot find symbol
+  symbol:   method getOwner()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[224,43] cannot find symbol
+  symbol:   method getOwner()
+  location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[INFO] 53 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.530 s
+[INFO] Finished at: 2026-03-06T10:18:43+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project pet-profile-service: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/controller/PetController.java:[15,34] variable petService not initialized in the default constructor
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[35,31] cannot find symbol
+[ERROR]   symbol:   method getFirstName()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[36,30] cannot find symbol
+[ERROR]   symbol:   method getLastName()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[37,29] cannot find symbol
+[ERROR]   symbol:   method getContact()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[38,27] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[39,29] cannot find symbol
+[ERROR]   symbol:   method getAddress()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[42,47] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable savedOwner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[57,31] cannot find symbol
+[ERROR]   symbol:   method getFirstName()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[58,30] cannot find symbol
+[ERROR]   symbol:   method getLastName()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[59,29] cannot find symbol
+[ERROR]   symbol:   method getContact()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[60,27] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[61,29] cannot find symbol
+[ERROR]   symbol:   method getAddress()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.OwnerDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[63,41] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable updated of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[78,26] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[91,51] cannot find symbol
+[ERROR]   symbol:   method getOwnerId()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[96,24] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[97,27] cannot find symbol
+[ERROR]   symbol:   method getSpecies()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[98,25] cannot find symbol
+[ERROR]   symbol:   method getBreed()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[99,23] cannot find symbol
+[ERROR]   symbol:   method getAge()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[100,26] cannot find symbol
+[ERROR]   symbol:   method getGender()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[101,12] cannot find symbol
+[ERROR]   symbol:   method setOwner(com.vetcare.pet_profile_service.entity.Owner)
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[106,74] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable savedPet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[107,21] cannot find symbol
+[ERROR]   symbol:   method setQrCodeFileName(java.lang.String)
+[ERROR]   location: variable savedPet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[115,43] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable savedPet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[125,51] cannot find symbol
+[ERROR]   symbol:   method getOwnerId()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[126,90] cannot find symbol
+[ERROR]   symbol:   method getOwnerId()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[128,24] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[129,27] cannot find symbol
+[ERROR]   symbol:   method getSpecies()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[130,25] cannot find symbol
+[ERROR]   symbol:   method getBreed()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[131,23] cannot find symbol
+[ERROR]   symbol:   method getAge()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[132,26] cannot find symbol
+[ERROR]   symbol:   method getGender()
+[ERROR]   location: variable dto of type com.vetcare.pet_profile_service.dto.PetDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[133,12] cannot find symbol
+[ERROR]   symbol:   method setOwner(com.vetcare.pet_profile_service.entity.Owner)
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[137,42] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable updatedPet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[148,16] cannot find symbol
+[ERROR]   symbol:   method getQrCodeFileName()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[150,49] cannot find symbol
+[ERROR]   symbol:   method getQrCodeFileName()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[162,49] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.vetcare.pet_profile_service.dto.LogMessageDto
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[199,24] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable owner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[200,31] cannot find symbol
+[ERROR]   symbol:   method getFirstName()
+[ERROR]   location: variable owner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[201,30] cannot find symbol
+[ERROR]   symbol:   method getLastName()
+[ERROR]   location: variable owner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[202,29] cannot find symbol
+[ERROR]   symbol:   method getContact()
+[ERROR]   location: variable owner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[203,27] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable owner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[204,29] cannot find symbol
+[ERROR]   symbol:   method getAddress()
+[ERROR]   location: variable owner of type com.vetcare.pet_profile_service.entity.Owner
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[210,22] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[211,24] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[212,27] cannot find symbol
+[ERROR]   symbol:   method getSpecies()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[213,25] cannot find symbol
+[ERROR]   symbol:   method getBreed()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[214,23] cannot find symbol
+[ERROR]   symbol:   method getAge()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[215,26] cannot find symbol
+[ERROR]   symbol:   method getGender()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[216,34] cannot find symbol
+[ERROR]   symbol:   method getQrCodeFileName()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[219,16] cannot find symbol
+[ERROR]   symbol:   method getQrCodeFileName()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[220,73] cannot find symbol
+[ERROR]   symbol:   method getQrCodeFileName()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[223,16] cannot find symbol
+[ERROR]   symbol:   method getOwner()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] /C:/Users/KVP Prasanna/Desktop/DEA 2/vetcare-backend/pet-profile-service/src/main/java/com/vetcare/pet_profile_service/service/PetServiceImpl.java:[224,43] cannot find symbol
+[ERROR]   symbol:   method getOwner()
+[ERROR]   location: variable pet of type com.vetcare.pet_profile_service.entity.Pet
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
